@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/buttons';
+import Form from './components/form';
 
 function App() {
+  const names = ['Kaung', 'Ei', 'Aye', 'Thandar'];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Test</h1>
+      {
+        names.map((name, index) => (
+          <h1 key={index}>Hello, my name is {name}</h1>
+        ))
+      }
+      <Button text='View More' background='blue' margin='10px'/>
+      <Button text='Filter' background='red' margin='10px'/>
+      <Button text='Submit' background='green' margin='10px'/>
+      <Form />
     </div>
   );
 }
