@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 
 const Form = () => {
-  const [formValues, setFormValues] = useState({});
+  const [formValues, setFormValues] = useState({
+    name: '',
+    job: ''
+  });
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -11,7 +14,7 @@ const Form = () => {
   const changeForm = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setFormValues((values) => ({...values, [name]: value}));
+    setFormValues({...formValues, [name]: value});
   }
   
   return (
