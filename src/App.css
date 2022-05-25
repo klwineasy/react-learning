@@ -32,6 +32,28 @@
   border: 1px solid black;
 }
 
+.container-column {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #333;
+  margin: 5px;
+  padding: 5px;
+  flex-direction: column;
+}
+
+.container-row {
+  display: flex;
+  flex: 1;
+  overflow-y: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
