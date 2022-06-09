@@ -1,21 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import User from '../components/user';
+import { useUsers } from '../provider/UsersProvider';
 
 const Users = () => {
-  //crud - create, read, update, delete
-  const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-  const getUsers = async () => {
-    setLoading(true);
-    await fetch('https://randomuser.me/api/?results=100&nat=us')
-      .then((response) => response.json())
-      .then((data) => setUserData(data.results));
-    setLoading(false);
-  };
+  const { userData, loading } = useUsers();
 
   return (
     <div className='container-row'>
